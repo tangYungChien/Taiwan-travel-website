@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hants">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>台灣旅遊網</title>
+    <!-- 導覽列的小icon -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 導入boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- 底照 -->
+    <img
+      class="fixed-image"
+      src="./images/maxresdefault.jpg"
+      alt="fixed-image"
+    />
+
+    <header>
+      <section class="logo">
+        <img src="./images/globe.png" alt="旅遊網logo" />
+        <h1>台灣旅遊推薦</h1>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-plane"></i> 台灣旅遊</a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-book"></i> 預約行程</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-regular fa-address-book"></i> 聯絡我們</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="background-img">
+        <div class="filter"></div>
+        <h3>休閒空間，放鬆身心，安排一趟台灣旅遊行程</h3>
+      </section>
+      <section class="info-circles">
+        <h3>遊玩主題</h3>
+        <div class="circles">
+          <div class="circle">
+            <img src="./images/山林.jpeg" alt="山" />
+            <p>悠遊山林</p>
+          </div>
+          <div class="circle">
+            <img src="./images/滷肉飯.jpg" alt="滷肉飯" />
+            <p>台灣必吃</p>
+          </div>
+          <div class="circle">
+            <img src="./images/夜景101.jpg" alt="夜景101" />
+            <p>都市夜景</p>
+          </div>
+          <div class="circle">
+            <img src="./images/海.jpg" alt="海" />
+            <p>濱海度假</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="empty-container">
+        <h3>今天就開始規劃行程，找到最適合的旅遊景點 !</h3>
+      </section>
+      <section class="city-card">
+        <h3>城市主題</h3>
+        <div class="city">
+          <div class="card">
+            <div class="imgCity">
+              <img src="./images/台北.webp" class="card-img-top" alt="台北" />
+            </div>
+            <div class="card-body">
+              <p class="card-text">台北</p>
+              <a href="./taipei.html"
+                ><button type="button" class="btn btn-warning">GO >></button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgCity">
+              <img src="./images/台中.jfif" class="card-img-top" alt="台中" />
+            </div>
+            <div class="card-body">
+              <p class="card-text">台中</p>
+              <button type="button" class="btn btn-warning">GO >></button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgCity">
+              <img src="./images/高雄.jpg" class="card-img-top" alt="高雄" />
+            </div>
+            <div class="card-body">
+              <p class="card-text">高雄</p>
+              <button type="button" class="btn btn-warning">GO >></button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgCity">
+              <img src="./images/花蓮.jpg" class="card-img-top" alt="花東" />
+            </div>
+            <div class="card-body">
+              <p class="card-text">花東</p>
+              <button type="button" class="btn btn-warning">GO >></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="google-map">
+        <h3>台灣地理位置</h3>
+        <p>
+          臺灣是位於東亞、太平洋西北側的島嶼，地處琉球群島與菲律賓群島之間，西隔臺灣海峽與中國大陸相望
+        </p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3747610.879196647!2d117.44231814816156!3d23.46853412484096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1699803211118!5m2!1szh-TW!2stw"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>
+      <section class="logo">
+        <h3>台灣旅遊推薦</h3>
+      </section>
+      <section class="links">
+        <a href="#"
+          ><img title="facebook" src="./Icons/facebook.svg" alt="facebook"
+        /></a>
+        <a href="#"
+          ><img title="instagram" src="./Icons/instagram.svg" alt="instagram"
+        /></a>
+        <a href="#"
+          ><img title="twitter" src="./Icons/twitter.svg" alt="twitter"
+        /></a>
+        <a href="#"
+          ><img title="youtube" src="./Icons/youtube.svg" alt="youtube"
+        /></a>
+      </section>
+    </footer>
+
+    <script>
+      setInterval(() => {
+        let topBackground = document.querySelector("section.background-img");
+        if (
+          topBackground.style.backgroundImage == 'url("../images/饒河夜市.jpg")'
+        ) {
+          topBackground.style.backgroundImage = 'url("../images/火車.jpg")';
+        } else if (
+          topBackground.style.backgroundImage == 'url("../images/火車.jpg")'
+        ) {
+          topBackground.style.backgroundImage = 'url("../images/海景.jpg")';
+        } else {
+          topBackground.style.backgroundImage = 'url("../images/饒河夜市.jpg")';
+        }
+      }, 2500);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+$themeColor: rgba(12, 109, 184, 0.5);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Microsoft JhengHei;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  position: relative;
+  img.fixed-image {
+    min-height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -5;
+    bottom: 0;
+    left: 0;
+  }
+
+  header {
+    background-color: white;
+    display: flex; //變橫向
+    flex-wrap: wrap; //可以自動換行
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 6px -6px #777;
+
+    section.logo {
+      color: rgb(80, 79, 79);
+      flex: 2 1 400px;
+      display: flex;
+      align-items: center;
+      h1 {
+        font-size: 2.5rem;
+      }
+      img {
+        width: 4vw;
+        height: 4vw;
+      }
+    }
+    nav {
+      flex: 5 1 500px;
+
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+
+        li {
+          a {
+            color: rgb(80, 79, 79);
+            text-decoration: none;
+            font-size: 1.35rem;
+            transform: all 0.2s ease;
+            &:hover {
+              color: $themeColor;
+              border-bottom: 3px solid $themeColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.background-img {
+      // 設定背景圖片
+      min-height: 70vh;
+      background-image: url("../images/饒河夜市.jpg");
+      background-size: cover;
+      background-position: center;
+      transition: all 0.75s ease;
+      position: relative;
+      z-index: 0; // stacking context
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.filter {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        min-height: 70vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      h3 {
+        color: white;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    section.info-circles {
+      background-color: white;
+      padding: 2rem 1rem;
+
+      h3 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      div.circles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      div.circle {
+        padding: 1rem;
+        flex: 0 1 250px;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        img {
+          width: 80%;
+          border-radius: 50%;
+          transition: all 0.1s ease-in;
+          padding: 0.3rem;
+          &:hover {
+            border: 3px solid $themeColor;
+          }
+        }
+      }
+    }
+    section.empty-container {
+      min-height: 70vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+    section.google-map {
+      background-color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      h3 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.25rem;
+        margin: 1rem;
+      }
+
+      iframe {
+        width: 100%;
+        height: 40vh;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+
+  section.links {
+    margin-top: 2rem;
+    a {
+      img {
+        width: 5vh;
+        margin: 0rem 1rem;
+      }
+    }
+  }
+}
+
+section.city-card {
+  background-color: white;
+  padding: 2rem;
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  div.city {
+    display: flex;
+    justify-content: center;
+
+    padding: 2rem 1rem;
+    text-align: center;
+
+    div.card {
+      margin: 0rem 1rem;
+      height: 500px;
+      width: 400px;
+      position: flex;
+      .imgCity {
+        position: absolute;
+        height: 350px;
+        width: 100%;
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .card-body {
+        position: absolute;
+        bottom: 1rem;
+        justify-content: center;
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    header {
+      section.logo {
+        flex-direction: column;
+        img {
+          width: 10vw;
+          height: 10vw;
+        }
+      }
+      nav {
+        ul {
+          flex-direction: column;
+          li {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}

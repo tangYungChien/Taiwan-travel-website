@@ -1,0 +1,213 @@
+$themeColor: rgba(12, 109, 184, 0.5);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Microsoft JhengHei;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  background-color: white;
+  display: flex; //變橫向
+  flex-wrap: wrap; //可以自動換行
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 10px 6px -6px #777;
+
+  section.logo {
+    color: rgb(80, 79, 79);
+    flex: 2 1 400px;
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: 2.5rem;
+    }
+    img {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+  nav {
+    flex: 5 1 500px;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+
+      li {
+        a {
+          color: rgb(80, 79, 79);
+          text-decoration: none;
+          font-size: 1.35rem;
+          transform: all 0.2s ease;
+          &:hover {
+            color: $themeColor;
+            border-bottom: 3px solid $themeColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 1240px;
+  position: relative;
+  margin: 50px auto;
+  h1 {
+    padding-top: 50px;
+  }
+}
+
+ul.list-card {
+  list-style: none;
+  margin-top: 30px;
+
+  li {
+    display: flex;
+    margin: 50px 0px;
+
+    .img-card img {
+      aspect-ratio: 1 / 1;
+      width: 300px; /* 也可以換成任何你想要的寬度 */
+      object-fit: cover;
+      object-position: center;
+    }
+    div.info-blk {
+      margin: 0px 30px;
+      h3 {
+        background-color: rgb(224, 244, 250);
+        padding: 5px 2px;
+        border-radius: 3px;
+      }
+
+      .middle {
+        display: flex;
+
+        p.text {
+          margin-top: 20px;
+          text-align: justify;
+          display: block;
+
+          margin-right: 70px;
+        }
+        div.button {
+          padding: 50px;
+
+          button {
+            width: 120px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.weather {
+  div {
+    width: 1200px;
+    height: 2000px;
+    border: solid black;
+  }
+}
+
+section.likeDiv {
+  margin: 40px;
+
+  .likeOne {
+    display: flex;
+    align-items: center;
+    .likeCard {
+      width: 70vw;
+      height: 40vh;
+      margin: 3vw;
+      background-color: #f7f7f7;
+      border: none;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .write {
+        height: 35vh;
+        width: 32vw;
+        border: none;
+
+        padding: 15px;
+
+        // position: absolute;
+      }
+      .CardImgDiv {
+        // position: absolute;
+        width: 17vw;
+        height: 35vh;
+        // top: 15px;
+        // left: 15px;
+        // background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .CardImg img {
+          aspect-ratio: 1 / 1;
+          width: 13vw; /* 也可以換成任何你想要的寬度 */
+          object-fit: cover;
+        }
+
+        a {
+          // border: solid black;
+          display: inline-block;
+          width: 16vw;
+          height: 5vh;
+          background-color: white;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  .trash-button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    color: #777;
+  }
+}
+
+//城市封面圖片樣式
+.wrap {
+  display: block;
+  width: 100vw;
+  height: 50vh;
+  background: url("../images/夜景101.jpg") no-repeat center center;
+  background-size: cover;
+}
+.layer {
+  background: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+  height: 50vh;
+}
+.layer .wrap {
+  font-weight: bold;
+  font-size: 250px;
+  text-align: center;
+  line-height: 50vh;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

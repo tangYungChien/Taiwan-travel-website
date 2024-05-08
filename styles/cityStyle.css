@@ -1,0 +1,190 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Microsoft JhengHei;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 10px 6px -6px #777;
+}
+header section.logo {
+  color: rgb(80, 79, 79);
+  flex: 2 1 400px;
+  display: flex;
+  align-items: center;
+}
+header section.logo h1 {
+  font-size: 2.5rem;
+}
+header section.logo img {
+  width: 4vw;
+  height: 4vw;
+}
+header nav {
+  flex: 5 1 500px;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+header nav ul li a {
+  color: rgb(80, 79, 79);
+  text-decoration: none;
+  font-size: 1.35rem;
+  transform: all 0.2s ease;
+}
+header nav ul li a:hover {
+  color: rgba(12, 109, 184, 0.5);
+  border-bottom: 3px solid rgba(12, 109, 184, 0.5);
+}
+
+main {
+  width: 1240px;
+  position: relative;
+  margin: 50px auto;
+}
+main h1 {
+  padding-top: 50px;
+}
+
+ul.list-card {
+  list-style: none;
+  margin-top: 30px;
+}
+ul.list-card li {
+  display: flex;
+  margin: 50px 0px;
+}
+ul.list-card li .img-card img {
+  aspect-ratio: 1/1;
+  width: 300px; /* 也可以換成任何你想要的寬度 */
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+ul.list-card li div.info-blk {
+  margin: 0px 30px;
+}
+ul.list-card li div.info-blk h3 {
+  background-color: rgb(224, 244, 250);
+  padding: 5px 2px;
+  border-radius: 3px;
+}
+ul.list-card li div.info-blk .middle {
+  display: flex;
+}
+ul.list-card li div.info-blk .middle p.text {
+  margin-top: 20px;
+  text-align: justify;
+  display: block;
+  margin-right: 70px;
+}
+ul.list-card li div.info-blk .middle div.button {
+  padding: 50px;
+}
+ul.list-card li div.info-blk .middle div.button button {
+  width: 120px;
+  font-weight: bolder;
+}
+
+section.weather div {
+  width: 1200px;
+  height: 2000px;
+  border: solid black;
+}
+
+section.likeDiv {
+  margin: 40px;
+}
+section.likeDiv .likeOne {
+  display: flex;
+  align-items: center;
+}
+section.likeDiv .likeOne .likeCard {
+  width: 70vw;
+  height: 40vh;
+  margin: 3vw;
+  background-color: #f7f7f7;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section.likeDiv .likeOne .likeCard .write {
+  height: 35vh;
+  width: 32vw;
+  border: none;
+  padding: 15px;
+}
+section.likeDiv .likeOne .likeCard .CardImgDiv {
+  width: 17vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.likeDiv .likeOne .likeCard .CardImgDiv .CardImg img {
+  aspect-ratio: 1/1;
+  width: 13vw; /* 也可以換成任何你想要的寬度 */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.likeDiv .likeOne .likeCard .CardImgDiv a {
+  display: inline-block;
+  width: 16vw;
+  height: 5vh;
+  background-color: white;
+  border-radius: 20px;
+}
+section.likeDiv .trash-button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  color: #777;
+}
+
+.wrap {
+  display: block;
+  width: 100vw;
+  height: 50vh;
+  background: url("../images/夜景101.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.layer {
+  background: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+  height: 50vh;
+}
+
+.layer .wrap {
+  font-weight: bold;
+  font-size: 250px;
+  text-align: center;
+  line-height: 50vh;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}/*# sourceMappingURL=cityStyle.css.map */
