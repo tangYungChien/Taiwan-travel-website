@@ -116,6 +116,15 @@ section.weather div {
 section.likeDiv {
   margin: 40px;
 }
+section.likeDiv h3 {
+  text-align: center;
+  color: #333; /* 字体颜色 */
+  background-color: #f0f0f0; /* 背景颜色 */
+  padding: 10px; /* 内边距 */
+  border: 1px solid #ccc; /* 边框 */
+  border-radius: 5px; /* 圆角 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
 section.likeDiv .likeOne {
   display: flex;
   align-items: center;
@@ -151,11 +160,15 @@ section.likeDiv .likeOne .likeCard .CardImgDiv .CardImg img {
      object-fit: cover;
 }
 section.likeDiv .likeOne .likeCard .CardImgDiv a {
+  text-decoration: none;
+  text-align: center;
+  line-height: 2em;
   display: inline-block;
   width: 16vw;
   height: 5vh;
   background-color: white;
   border-radius: 20px;
+  font-size: 1.2em;
 }
 section.likeDiv .trash-button {
   width: 70px;
@@ -187,4 +200,25 @@ section.likeDiv .trash-button {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+.Chiang-Kai-shek-Memorial-Hall .CardImg {
+  background-image: url(../images/taipei-img-02.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.Chiang-Kai-shek-Memorial-Hall a {
+  content: "國立中正紀念堂";
+}
+
+.PalaceMuseum .CardImg {
+  background-image: url(../images/taipei-img-01.jpg);
+  background-position: center center;
+  background-size: cover;
 }/*# sourceMappingURL=cityStyle.css.map */

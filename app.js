@@ -9,20 +9,20 @@ Allbutton.forEach((button) => {
       console.log("上");
       e.target.innerHTML = "已收藏!";
       addLike(e, spotID);
-      noSpot();
+      checkElementExistence();
     } else {
       console.log("下");
       e.target.innerHTML = "+ 加入收藏";
       let likeOne = document.getElementsByClassName(spotID);
       likeOne[0].remove();
-      noSpot();
+      checkElementExistence();
     }
   });
 });
 
 let likeDiv = document.querySelector(".likeDiv");
 function addLike(e, spotID) {
-  console.log("經過addLike");
+  // console.log("經過addLike");
   // let likeDiv = document.querySelector(".likeDiv");
   let likeOne = document.createElement("div");
   likeOne.classList.add("likeOne");
@@ -35,6 +35,7 @@ function addLike(e, spotID) {
   CardImg.classList.add("CardImg");
   let Img = document.createElement("img");
   let CardImgWord = document.createElement("a");
+
   let write = document.createElement("textarea");
   write.classList.add("write");
   write.setAttribute("placeholder", "筆記欄...");
@@ -57,46 +58,107 @@ function addLike(e, spotID) {
   btnDiv.appendChild(newButton);
   newButton.appendChild(newItag);
 
+  // //加入a tag
+  if (likeOne.classList.contains("PalaceMuseum")) {
+    CardImgWord.innerHTML = "國立故宮博物院";
+    CardImgWord.setAttribute("href", "#PalaceMuseum");
+  } else if (likeOne.classList.contains("Chiang-Kai-shek-Memorial-Hall")) {
+    CardImgWord.innerHTML = "國立中正紀念堂";
+    CardImgWord.setAttribute("href", "#Chiang-Kai-shek-Memorial-Hall");
+  }
+  //監聽a移到螢幕中間
+  let allLinks = document.querySelectorAll(".CardImgDiv a");
+  console.log(allLinks);
+  allLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("監聽a");
+      const targetId = link.getAttribute("href");
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    });
+  });
+
   //垃圾桶功能
   let allTrash = document.querySelectorAll(".trash-button");
   let button2 = document.getElementById(spotID);
-  console.log(button2);
+  console.log(allTrash);
 
   allTrash.forEach((trash) => {
-    trash.addEventListener("click", (e) => {
-      console.log(e.target.parentElement.parentElement.parentElement);
-      e.target.parentElement.parentElement.parentElement.classList.add(
-        "remove"
-      );
-      e.target.parentElement.parentElement.parentElement.remove();
+    trash.addEventListener("click", () => {
+      console.log(trash.parentElement.parentElement);
+      trash.parentElement.parentElement.classList.add("remove");
       button2.innerHTML = "+ 加入收藏";
-      noSpot();
     });
   });
-  // console.log(e.target.parentElement.parentElement);
+  allTrash.forEach((trash) => {
+    let form = trash.parentElement.parentElement;
+    form.addEventListener("transitionend", (e) => {
+      e.target.remove();
+      checkElementExistence();
+    });
+  });
 }
 
-// function delLike(e, spotID) {
-//   let likeOne = document.getElementsByClassName(spotID);
-//   likeOne[0].remove();
-// }
-
-let noSpot = () => {
-  console.log("經過nospot");
-  function hasElementsWithClassName(likeOne) {
-    let elements = document.getElementsByClassName(likeOne);
-    return elements.length > 0;
-  }
-  hasElementsWithClassName("likeOne");
-  if (hasElementsWithClassName("likeOne") == true) {
-    let no = document.querySelector(".no");
-    no.remove();
-    console.log("經過nospot remove");
+//無收藏景點
+function checkElementExistence() {
+  console.log("經過checkElementExistence");
+  let likeOneDiv = document.getElementsByClassName("likeOne")[0]; // 获取第一个具有类名 'likeOne' 的元素
+  let noAttractionsMessage = document.getElementById("noAttractionsMessage");
+  console.log(!likeOneDiv);
+  if (!likeOneDiv) {
+    noAttractionsMessage.style.display = "block";
   } else {
-    let h3 = document.createElement("h3");
-    h3.classList.add("no");
-    h3.innerHTML = "暫無台北收藏景點";
-    likeDiv.appendChild(h3);
-    console.log("經過nospot +h3");
+    noAttractionsMessage.style.display = "none";
   }
-};
+}
+
+// 讓atag在畫面中間
+function aTag() {
+  let allLinks = document.querySelectorAll("CardImgDiv.a");
+  allLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("監聽a");
+      const targetId = link.getAttribute("href");
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    });
+  });
+}
+
+// // 在 likeOne 类中使用 aTag 函数
+// document.querySelectorAll(".likeOne").forEach((likeOne) => {
+//   // 定义 aTag 函数
+//   function aTag() {
+//     likeOne.addEventListener("click", (e) => {
+//       if (!likeOne.contains(e.target)) {
+//         return; // 如果点击的不是 likeOne 的直接子元素，则返回
+//       }
+
+//       e.preventDefault(); // 阻止默认行为
+//       console.log("監聽a");
+//       const targetId = e.target.getAttribute("href"); // 获取到锚点的 ID
+//       if (targetId) {
+//         const targetElement = document.querySelector(targetId); // 获取到锚点所在的元素
+//         // 将页面滚动到锚点所在的元素的位置（屏幕中间）
+//         if (targetElement) {
+//           targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
+//         }
+//       }
+//     });
+//   }
+
+//   // 调用 aTag 函数
+//   aTag();
+// });
