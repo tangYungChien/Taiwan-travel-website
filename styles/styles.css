@@ -16,10 +16,10 @@ h6 {
 }
 
 body {
+  overflow-x: hidden;
   position: relative;
 }
 body img.fixed-image {
-  min-height: 100vh;
   position: fixed;
   width: 100%;
   z-index: -5;
@@ -179,11 +179,11 @@ section.city-card h3 {
 section.city-card div.city {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 2rem 1rem;
-  text-align: center;
 }
 section.city-card div.city div.card {
-  margin: 0rem 1rem;
+  margin: 2rem 1rem;
   height: 500px;
   width: 400px;
   position: flex;
@@ -208,6 +208,26 @@ section.city-card div.city div.card .card-body p {
   font-size: 1.8rem;
 }
 
+/* 隱藏 checkbox */
+input {
+  display: none;
+}
+
+/* 漢堡按鈕 */
+label {
+  float: right;
+  padding-right: 50px;
+  line-height: 50px;
+}
+label img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+input:checked ~ ul {
+  max-height: 300px;
+}
+
 @media screen and (max-width: 700px) {
   body header section.logo {
     flex-direction: column;
@@ -218,8 +238,15 @@ section.city-card div.city div.card .card-body p {
   }
   body header nav ul {
     flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
   }
   body header nav ul li {
     padding: 0.5rem 0.25rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  label {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

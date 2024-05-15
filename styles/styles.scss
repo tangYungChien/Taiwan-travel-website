@@ -17,9 +17,10 @@ h6 {
 }
 
 body {
+  overflow-x: hidden;
   position: relative;
   img.fixed-image {
-    min-height: 100vh;
+    // min-height: 100vh;
     position: fixed;
     width: 100%;
     z-index: -5;
@@ -194,6 +195,7 @@ body {
 section.city-card {
   background-color: white;
   padding: 2rem;
+
   h3 {
     font-size: 2rem;
     text-align: center;
@@ -201,12 +203,11 @@ section.city-card {
   div.city {
     display: flex;
     justify-content: center;
-
+    flex-wrap: wrap;
     padding: 2rem 1rem;
-    text-align: center;
 
     div.card {
-      margin: 0rem 1rem;
+      margin: 2rem 1rem;
       height: 500px;
       width: 400px;
       position: flex;
@@ -234,6 +235,27 @@ section.city-card {
   }
 }
 
+/* 隱藏 checkbox */
+input {
+  display: none;
+}
+
+/* 漢堡按鈕 */
+label {
+  float: right;
+  padding-right: 50px;
+  line-height: 50px;
+
+  img {
+    width: 30px;
+    vertical-align: middle;
+  }
+}
+
+input:checked ~ ul {
+  max-height: 300px;
+}
+
 @media screen and (max-width: 700px) {
   body {
     header {
@@ -247,11 +269,19 @@ section.city-card {
       nav {
         ul {
           flex-direction: column;
+          max-height: 0;
+          overflow: hidden;
           li {
             padding: 0.5rem 0.25rem;
           }
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  label {
+    display: none;
   }
 }

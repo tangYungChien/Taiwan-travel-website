@@ -15,6 +15,10 @@ h6 {
   font-weight: normal;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   background-color: white;
   display: flex;
@@ -194,7 +198,7 @@ section.likeDiv .trash-button {
 
 .layer .wrap {
   font-weight: bold;
-  font-size: 250px;
+  font-size: 200px;
   text-align: center;
   line-height: 50vh;
   color: transparent;
@@ -207,18 +211,128 @@ section.likeDiv .trash-button {
   transition: all 0.5s ease;
 }
 
-.Chiang-Kai-shek-Memorial-Hall .CardImg {
-  background-image: url(../images/taipei-img-02.jpg);
+.CardImg {
   background-position: center center;
   background-size: cover;
 }
 
-.Chiang-Kai-shek-Memorial-Hall a {
-  content: "國立中正紀念堂";
+.Chiang-Kai-shek-Memorial-Hall .CardImg {
+  background-image: url(../images/taipei-img-02.jpg);
 }
 
 .PalaceMuseum .CardImg {
   background-image: url(../images/taipei-img-01.jpg);
-  background-position: center center;
-  background-size: cover;
+}
+
+.taipei101 .CardImg {
+  background-image: url(../images/台北101.jpg);
+}
+
+.AstronomicalMuseum .CardImg {
+  background-image: url(../images/Astronomical\ Museum.jpg);
+}
+
+.ArtsMuseum .CardImg {
+  background-image: url(../images/ArtsMuseum.jpg);
+}
+
+.ChildrenAmusementPark .CardImg {
+  background-image: url(../images/ChildrenAmusementPark.jpg);
+}
+
+.Gaomei .CardImg {
+  background-image: url(../images/taichung/Gaomei.jpg);
+}
+
+.Maple .CardImg {
+  background-image: url(../images/taichung/Maple\ Garden.jfif);
+}
+
+.TaichungTheater .CardImg {
+  background-image: url(../images/taichung/National\ Taichung\ Theater.jpg);
+}
+
+.Matsu .CardImg {
+  background-image: url(../images/taichung/Matsu.jpg);
+}
+
+.NaturalScience .CardImg {
+  background-image: url(../images/taichung/國立自然科學博物館.jfif);
+}
+
+.weatherDiv {
+  background-color: rgb(238, 250, 249);
+  border-radius: 30px;
+  margin: 32px;
+}
+.weatherDiv div.weather {
+  padding: 30px;
+}
+.weatherDiv div.weather .weatherIn img {
+  width: 140px;
+  margin: 14px;
+}
+.weatherDiv div.weather .weatherIn p {
+  font-size: 25px;
+  margin: 0;
+}
+.weatherDiv div.weather .weatherIn .txtsmall {
+  font-size: 15px;
+  background-color: #ffffff;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+}
+
+.week {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0px;
+}
+.week img {
+  width: 70px;
+  display: block;
+  margin: 10px;
+}
+.week p {
+  margin: 0;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style each nav item */
+.nav-item {
+  margin: 0 15px;
+}
+
+/* Style the nav links */
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  color: rgba(12, 109, 184, 0.5);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for the current page link */
+.nav-link[aria-current=page] {
+  background-color: rgba(12, 109, 184, 0.5);
+  color: #fff;
+}
+
+/* Hover effect for nav links */
+.nav-link:hover {
+  background-color: rgba(12, 109, 184, 0.5);
+  color: #fff;
 }/*# sourceMappingURL=cityStyle.css.map */

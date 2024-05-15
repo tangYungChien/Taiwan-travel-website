@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>台北旅遊</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 導入boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./styles/cityStyle.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <section class="logo">
+        <img src="./images/globe.png" alt="旅遊網logo" />
+        <h1>台灣旅遊推薦</h1>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html"
+              ><i class="fa-solid fa-plane"></i> 旅遊首頁</a
+            >
+          </li>
+          <li>
+            <a href="allWeather.html"
+              ><i class="fa-solid fa-cloud"></i> 各地天氣</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-regular fa-address-book"></i> 聯絡我們</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#">台北天氣</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Taichung">台中天氣</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Kaohsiung">高雄天氣</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Hualien">花蓮天氣</a>
+      </li>
+    </ul>
+    <main>
+      <section class="weatherDiv">
+        <h1 class="h1weather" style="padding: 50px">台北天氣</h1>
+        <div class="nowWeather"></div>
+        <div class="week"></div>
+      </section>
+      <hr id="Taichung" />
+
+      <section class="weatherDiv">
+        <h1 class="h1weather" style="padding: 50px">台中天氣</h1>
+        <div class="nowWeather"></div>
+        <div class="week"></div>
+      </section>
+      <hr id="Kaohsiung" />
+      <section class="weatherDiv">
+        <h1 class="h1weather" style="padding: 50px">高雄天氣</h1>
+        <div class="nowWeather"></div>
+        <div class="week"></div>
+      </section>
+      <hr id="Hualien" />
+      <section class="weatherDiv">
+        <h1 class="h1weather" style="padding: 50px">花蓮天氣</h1>
+        <div class="nowWeather"></div>
+        <div class="week"></div>
+      </section>
+    </main>
+    <script src="./weatherApp.js"></script>
+  </body>
+</html>
