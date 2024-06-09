@@ -1,17 +1,13 @@
 let Allbutton = document.querySelectorAll(".btn-outline-danger");
-console.log(Allbutton);
-
 Allbutton.forEach((button) => {
   button.addEventListener("click", (e) => {
     spotID = e.target.id;
 
     if (e.target.innerText == "+ 加入收藏") {
-      console.log("上");
       e.target.innerHTML = "已收藏!";
       addLike(e, spotID);
       checkElementExistence();
     } else {
-      console.log("下");
       e.target.innerHTML = "+ 加入收藏";
       let likeOne = document.getElementsByClassName(spotID);
       likeOne[0].remove();
@@ -131,10 +127,10 @@ function addLike(e, spotID) {
 checkElementExistence();
 //無收藏景點
 function checkElementExistence() {
-  console.log("經過checkElementExistence");
+  // console.log("經過checkElementExistence");
   let likeOneDiv = document.getElementsByClassName("likeOne")[0]; // 获取第一个具有类名 'likeOne' 的元素
   let noAttractionsMessage = document.getElementById("noAttractionsMessage");
-  console.log(!likeOneDiv);
+  // console.log(!likeOneDiv);
   if (!likeOneDiv) {
     noAttractionsMessage.style.display = "block";
   } else {
@@ -179,11 +175,7 @@ fetch(
 
     //城市名稱
     let name = weatherData.StationName;
-    //降雨機率
-    // let pop = weatherData.WeatherElement.Now.Precipitation;
-
     let tem = weatherData.WeatherElement.AirTemperature;
-
     let txt = weatherData.WeatherElement.Weather;
 
     let img;
@@ -240,7 +232,6 @@ fetch(
     } else {
       weatherWeek = data.records.locations[0].location[2];
     }
-    console.log(data.records.locations[0].location[1]);
 
     // 創建一個空陣列來存儲我們選取的資料
     const selectedData = [];
@@ -266,13 +257,6 @@ fetch(
       // 從"value"中擷取天氣狀態
       const weatherStatus = data.elementValue[0].value.split("。")[0];
 
-      // 從"value"中擷取降雨機率，如果沒有則設為0%
-      // const rainfallProbability = data.elementValue[0].value.includes(
-      //   "降雨機率"
-      // )
-      //   ? data.elementValue[0].value.split("。")[1]
-      //   : "降雨機率 0%";
-
       // 從"value"中擷取溫度範圍
       const valueParts = data.elementValue[0].value.split("。");
       const temperaturePartIndex = valueParts.findIndex((part) =>
@@ -294,16 +278,6 @@ fetch(
           ? temperatureRange[1].replace("度", "")
           : "N/A";
 
-      // let img;
-      // if (weatherStatus == "晴時多雲") {
-      //   img = "images/sun.png";
-      // } else if (weatherStatus == "多雲") {
-      //   img = "images/cloudySun.png";
-      // } else if (weatherStatus == "多雲時陰") {
-      //   img = "images/cloudy.png";
-      // } else {
-      //   img = "images/rainy.png";
-      // }
       let img;
       if (weatherStatus == "晴時多雲" || weatherStatus == "晴天") {
         img = "images/sun.png";
@@ -323,11 +297,10 @@ fetch(
       <div class = "Weekweather">
       <p class="txt" >${month}/${day} ${dayOfWeek}.</p>
       <img src="${img}" alt="">
-      <p >${weatherStatus} </p>
+      <p id="weatherStatus">${weatherStatus} </p>
       <p >${minTemperature} ~${maxTemperature}°C</p>
   </div>
         `;
-      console.log(weatherStatus);
     });
     processWeatherData(
       document.querySelectorAll(".Weekweather"),
@@ -335,28 +308,10 @@ fetch(
     );
   });
 
-// function processWeatherData(Weekweather, weatherStatus) {
-//   Weekweather.forEach((day) => {
-//     const rainfall = parseInt(
-//       day.querySelector("p:nth-of-type(3)").textContent.split(" ")[1]
-//     );
-//     if (rainfallProbability > 0) {
-//       rainForecast = true;
-//     }
-//   });
-//   // 判斷是否需要顯示景點
-//   const spot = document.querySelector(".spot");
-//   const txt = weatherStatus.textContent;
-//   if (txt.includes("雨")) {
-//     spot.style.display = "block";
-//   } else {
-//     spot.style.display = "none";
-//   }
-// }
 // 判斷是否需要顯示雨天景點
 function processWeatherData(Weekweather, weatherStatus) {
   let rainForecast = false;
-  console.log(weatherStatus);
+  // console.log(weatherStatus);
   for (let day of Weekweather) {
     const imgSrc = day.querySelector("img").getAttribute("src");
     if (imgSrc === "images/rainy.png") {

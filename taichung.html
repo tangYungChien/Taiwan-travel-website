@@ -28,6 +28,7 @@
       href="path/to/font-awesome/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./styles/cityStyle.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <header>
@@ -36,6 +37,9 @@
         <h1>台灣旅遊推薦</h1>
       </section>
       <nav>
+        <label for="switch"><img src="/images/burger.png" /></label
+        ><!--漢堡按鈕圖示-->
+        <input type="checkbox" id="switch" /><!--選單開關-->
         <ul>
           <li>
             <a href="./index.html"
@@ -81,7 +85,7 @@
           <a class="nav-link" href="#like">收藏景點</a>
         </li>
       </ul>
-      <h1>精選景點</h1>
+      <h1 class="bigtitle">精選景點</h1>
       <ul class="list-card">
         <li class="item">
           <div class="img-card">
@@ -197,7 +201,7 @@
         </li>
       </ul>
       <hr id="weather" />
-      <h1 class="h1weather">台中天氣</h1>
+      <h1 class="h1weather bigtitle">台中天氣</h1>
       <section class="weatherDiv">
         <div class="nowWeather"></div>
         <div class="week"></div>
@@ -288,7 +292,7 @@
         </ul>
       </section>
       <hr id="like" />
-      <h1>台中收藏景點</h1>
+      <h1 class="bigtitle">台中收藏景點</h1>
       <section class="likeDiv">
         <h3 id="noAttractionsMessage" style="display: none">
           暫無台中收藏景點

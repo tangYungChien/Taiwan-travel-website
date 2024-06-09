@@ -90,7 +90,6 @@ body main section.background-img div.filter {
 }
 body main section.background-img h3 {
   color: white;
-  font-size: 2.5rem;
   text-align: center;
 }
 body main section.info-circles {
@@ -100,6 +99,7 @@ body main section.info-circles {
 body main section.info-circles h3 {
   font-size: 2rem;
   text-align: center;
+  padding: 10px;
 }
 body main section.info-circles div.circles {
   display: flex;
@@ -130,7 +130,6 @@ body main section.empty-container {
   align-items: center;
 }
 body main section.empty-container h3 {
-  font-size: 2rem;
   color: white;
 }
 body main section.google-map {
@@ -139,7 +138,7 @@ body main section.google-map {
   text-align: center;
 }
 body main section.google-map h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 body main section.google-map p {
   font-size: 1.25rem;
@@ -180,10 +179,9 @@ section.city-card div.city {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem 1rem;
 }
 section.city-card div.city div.card {
-  margin: 2rem 1rem;
+  margin: 30px 10px;
   height: 500px;
   width: 400px;
   position: flex;
@@ -243,6 +241,42 @@ input:checked ~ ul {
   }
   body header nav ul li {
     padding: 0.5rem 0.25rem;
+  }
+  body main section.background-img {
+    min-height: 40vh;
+  }
+  body main section.background-img div.filter {
+    min-height: 40vh;
+  }
+  body main h3 {
+    font-size: 1.2rem;
+  }
+  body main section.info-circles div.circle {
+    flex: 0 1 150px;
+    padding: 0px;
+  }
+  body main section.empty-container {
+    min-height: 40vh;
+  }
+  body img.fixed-image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  section.city-card div.city div.card {
+    height: 350px;
+  }
+  section.city-card div.city div.card .imgCity {
+    height: 200px;
+  }
+  body main section.google-map p {
+    font-size: 1rem;
+  }
+  body footer h3 {
+    font-size: 1.7rem;
   }
 }
 @media screen and (min-width: 700px) {

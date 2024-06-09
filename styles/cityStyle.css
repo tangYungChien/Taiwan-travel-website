@@ -90,7 +90,7 @@ ul.list-card li div.info-blk {
   margin: 0px 30px;
 }
 ul.list-card li div.info-blk h3 {
-  background-color: rgb(224, 244, 250);
+  background-color: rgb(234, 234, 234);
   padding: 5px 2px;
   border-radius: 3px;
 }
@@ -233,7 +233,7 @@ section.likeDiv .trash-button {
 }
 
 .ArtsMuseum .CardImg {
-  background-image: url(../images/ArtsMuseum.jpg);
+  background-image: url(../images/Arts\ Museum.jpg);
 }
 
 .ChildrenAmusementPark .CardImg {
@@ -268,6 +268,13 @@ section.likeDiv .trash-button {
 .weatherDiv div.weather {
   padding: 30px;
 }
+.weatherDiv div.weather .weatherIn p.txtsmall {
+  font-size: 1rem;
+  background-color: #ffffff;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+}
 .weatherDiv div.weather .weatherIn img {
   width: 140px;
   margin: 14px;
@@ -275,13 +282,6 @@ section.likeDiv .trash-button {
 .weatherDiv div.weather .weatherIn p {
   font-size: 25px;
   margin: 0;
-}
-.weatherDiv div.weather .weatherIn .txtsmall {
-  font-size: 15px;
-  background-color: #ffffff;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 8px;
 }
 
 .week {
@@ -318,21 +318,180 @@ section.likeDiv .trash-button {
 .nav-link {
   display: block;
   padding: 10px 20px;
-  color: rgba(12, 109, 184, 0.5);
+  color: #777;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style for the current page link */
-.nav-link[aria-current=page] {
-  background-color: rgba(12, 109, 184, 0.5);
+.nav-link:hover {
+  background-color: #aaaaaa;
   color: #fff;
 }
 
-/* Hover effect for nav links */
-.nav-link:hover {
-  background-color: rgba(12, 109, 184, 0.5);
-  color: #fff;
+#weatherStatus {
+  font-size: small;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: hidden;
+  }
+  body main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    justify-content: center;
+  }
+  body hr {
+    width: 100%;
+  }
+  body .weatherDiv {
+    width: 90vw;
+    padding: 10px 0px;
+  }
+  body .weatherDiv h1 {
+    font-size: 1.5rem;
+  }
+  body .weatherDiv .weather {
+    padding: 2px 20px;
+  }
+  body .weatherDiv .weather .weatherIn {
+    text-align: center;
+  }
+  body .weatherDiv .weather .weatherIn p.txtsmall {
+    font-size: 10px;
+  }
+  body .weatherDiv .weather .weatherIn p {
+    font-size: 10px;
+  }
+  body .weatherDiv .weather .weatherIn img {
+    width: 90px;
+  }
+  body .weatherDiv .week {
+    display: grid;
+  }
+  body .weatherDiv .week .Weekweather {
+    display: flex;
+    margin: 5px;
+    align-items: center;
+  }
+  body .weatherDiv .week .Weekweather p.txt {
+    font-size: 10px;
+  }
+  body .weatherDiv .week .Weekweather img {
+    width: 40px;
+  }
+  body .weatherDiv .week .Weekweather #weatherStatus {
+    width: 60px;
+    padding: 3px;
+  }
+  body .weatherDiv .week .Weekweather p {
+    font-size: 12px;
+    margin: 10px;
+  }
+  .bigtitle {
+    width: 100%;
+    text-align: center;
+  }
+  .layer span.wrap {
+    font-size: 4rem;
+  }
+  .nav-tabs {
+    width: 100%;
+  }
+  .nav-tabs .nav-item a.nav-link {
+    padding: 10px;
+  }
+  ul.list-card {
+    padding: 0px;
+    width: 100%;
+  }
+  ul.list-card li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  ul.list-card li .img-card {
+    display: flex;
+    justify-content: center;
+  }
+  ul.list-card li .img-card img {
+    width: 250px;
+  }
+  ul.list-card li div.info-blk {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  ul.list-card li div.info-blk .middle div.button {
+    padding: 0px;
+  }
+  ul.list-card li div.info-blk .middle p.text {
+    margin-right: 0px;
+    margin: 20px 50px;
+  }
+  ul.list-card li div.info-blk .bottom-h05 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  ul.list-card li div.info-blk .static-desc p {
+    padding: 20px;
+  }
+  ul.list-card li div.info-blk .info-title {
+    margin: 0px;
+    width: 300px;
+  }
+  ul.list-card li div.info-blk .middle {
+    display: block;
+  }
+  section.spot h3 {
+    width: 100%;
+    text-align: center;
+  }
+  section.likeDiv {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  section.likeDiv #noAttractionsMessage {
+    margin: 20px;
+  }
+  section.likeDiv .trash-button {
+    width: 50px;
+    height: 50px;
+  }
+  section.likeDiv .likeOne {
+    width: 100%;
+  }
+  section.likeDiv .likeOne .likeCard {
+    flex-direction: column;
+    height: 300px;
+    justify-content: flex-start;
+  }
+  section.likeDiv .likeOne .likeCard .write {
+    width: 220px;
+    height: 100px;
+  }
+  section.likeDiv .likeOne .likeCard .CardImgDiv {
+    flex-direction: row;
+    width: auto;
+    height: 18vh;
+  }
+  section.likeDiv .likeOne .likeCard .CardImgDiv a {
+    font-size: small;
+    width: 150px;
+    height: 25px;
+  }
+  section.likeDiv .likeOne .likeCard .CardImgDiv .CardImg img {
+    width: 20vw;
+  }
 }/*# sourceMappingURL=cityStyle.css.map */

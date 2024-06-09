@@ -1,3 +1,4 @@
+//各地天氣頁面
 fetch(
   "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWA-1DDD4E0F-7770-4EF4-9ACE-009BDB05AEA3&StationName=%E8%87%BA%E5%8C%97,%E8%87%BA%E4%B8%AD,%E9%AB%98%E9%9B%84,%E8%8A%B1%E8%93%AE"
 )
@@ -40,7 +41,7 @@ fetch(
         .padStart(2, "0")}`;
 
       // 輸出更新日期時間
-      console.log(`更新時間: ${currentDate} ${currentTime}`);
+      // console.log(`更新時間: ${currentDate} ${currentTime}`);
 
       let nowWeather = weatherDiv.querySelector(".nowWeather");
 
@@ -49,7 +50,7 @@ fetch(
                 <div class = "weatherIn">
                 <p class="txtsmall">更新時間: ${currentDate} ${currentTime}</p>
                   <img src="${img}" alt="">
-                  <p class = "weatherStatus"> 天氣狀態: ${txt}</p>
+                  <p > 天氣狀態: ${txt}</p>
                   <p >目前氣溫: ${tem} °C</p>
                 </div>
             </div>
@@ -65,7 +66,7 @@ fetch(
   })
   .then(function (data) {
     let weatherWeek;
-    console.log(data);
+    // console.log(data);
     document.querySelectorAll(".weatherDiv").forEach((weatherDiv) => {
       let h1weather = weatherDiv.querySelector(".h1weather");
       if (h1weather.innerText == "台北天氣") {
@@ -103,13 +104,6 @@ fetch(
         // 從"value"中擷取天氣狀態
         const weatherStatus = data.elementValue[0].value.split("。")[0];
 
-        // 從"value"中擷取降雨機率，如果沒有則設為0%
-        const rainfallProbability = data.elementValue[0].value.includes(
-          "降雨機率"
-        )
-          ? data.elementValue[0].value.split("。")[1]
-          : "降雨機率 0%";
-
         // 從"value"中擷取溫度範圍
         const valueParts = data.elementValue[0].value.split("。");
         const temperaturePartIndex = valueParts.findIndex((part) =>
@@ -130,7 +124,6 @@ fetch(
           temperatureRange.length > 1
             ? temperatureRange[1].replace("度", "")
             : "N/A";
-        console.log(weatherStatus);
 
         let img;
         if (weatherStatus == "晴時多雲" || weatherStatus == "晴天") {
@@ -152,7 +145,7 @@ fetch(
 
               <p class="txt" >${month}/${day} ${dayOfWeek}.</p>
               <img src="${img}" alt="">
-              <p >${weatherStatus} </p>
+              <p id="weatherStatus">${weatherStatus} </p>
               <p >${minTemperature} ~${maxTemperature}°C</p>
               
 
