@@ -61,7 +61,7 @@ body header nav ul li a {
   color: rgb(80, 79, 79);
   text-decoration: none;
   font-size: 1.35rem;
-  transform: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 body header nav ul li a:hover {
   color: rgba(12, 109, 184, 0.5);

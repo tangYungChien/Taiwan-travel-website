@@ -63,7 +63,7 @@ body {
             color: rgb(80, 79, 79);
             text-decoration: none;
             font-size: 1.35rem;
-            transform: all 0.2s ease;
+            transition: all 0.2s ease;
             &:hover {
               color: $themeColor;
               border-bottom: 3px solid $themeColor;
@@ -79,12 +79,11 @@ body {
       // 設定背景圖片
       min-height: 70vh;
       background-image: url("../images/饒河夜市.jpg");
-      background-size: cover;
+      background-size: cover; //鋪滿空間，必要時局部裁切
       background-position: center;
       transition: all 0.75s ease;
       position: relative;
       z-index: 0; // stacking context
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -145,7 +144,6 @@ body {
       justify-content: center;
       align-items: center;
       h3 {
-        // font-size: 2rem;
         color: white;
       }
     }
@@ -203,7 +201,6 @@ section.city-card {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     div.card {
       // margin: 2rem 1rem;
       margin: 30px 10px;
@@ -241,7 +238,7 @@ input {
 
 /* 漢堡按鈕 */
 label {
-  float: right;
+  float: right; //將標籤向右浮動
   padding-right: 50px;
   line-height: 50px;
 
@@ -268,8 +265,8 @@ input:checked ~ ul {
       nav {
         ul {
           flex-direction: column;
-          max-height: 0;
-          overflow: hidden;
+          max-height: 0; //初始設置的最大高度為 0
+          overflow: hidden; //隱藏超出部分的內容
           li {
             padding: 0.5rem 0.25rem;
           }
